@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contatos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+   <ion-list *ngFor="let p of professores" >
+      <ion-item-sliding>
+        <button ion-item color="light">
+           <h2> {{ p.nome }} </h2>
+           <p> {{ p.email }} </p>
+          </button>  >
+        
+      </ion-item-sliding>   
+    </ion-list>
+</ion-content>

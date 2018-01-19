@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Avisos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list *ngFor="let a of avisos">
+        <ion-card>
+  <ion-card-header>
+    <h1> {{ a.titulo }} </h1>    
+  </ion-card-header>
+            
+  <ion-card-content>
+   {{ a.aviso }}
+  </ion-card-content>
+            
+   <ion-card-content>
+  postado em: {{ a.data }} hs
+  </ion-card-content>
+</ion-card>
+     
+    </ion-list>
+</ion-content>
