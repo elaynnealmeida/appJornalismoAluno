@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Setores da UFT</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-title text-center>Cadastrar Setor</ion-title>
+    <ion-list>
+  
+      <ion-item>
+        <ion-label floating>Setor</ion-label>
+        <ion-input type="text" [(ngModel)]="setor.setor"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>Local</ion-label>
+        <ion-input type="text" [(ngModel)]="setor.local"></ion-input>
+      </ion-item>
+    
+        <ion-item>
+          <ion-label floating>Telefone</ion-label>
+          <ion-input type="text" [(ngModel)]="setor.telefone"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>Dia</ion-label>
+          <ion-input type="text" [(ngModel)]="setor.dia"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label floating>Horário</ion-label>
+          <ion-input type="text" [(ngModel)]="setor.horario"></ion-input>
+        </ion-item>
+  
+  
+    </ion-list>
+  
+    <div padding>
+      <button ion-button full (click)="salvar(setor)">Cadastrar</button>
+    </div>
+  
+    <div padding>      
+      <ion-list *ngFor="let a of setores">
+        <ion-item-sliding>
+          <button ion-item (click)="getSetor(a.id)">
+            <h2> {{ a.setor }} </h2>                         
+            <p> {{ a.local }} </p>
+          </button> >
+          <ion-item-options side="right">
+            <button ion-button color="danger" (click)="deletar(a.id)">
+              Deletar
+            </button>
+          </ion-item-options>
+          <ion-item-options side="left">
+            <button ion-button color="secondary" (click)="editar(a)">
+              Editar
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+  </ion-content>

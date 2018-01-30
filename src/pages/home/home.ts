@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { LoginPage } from '../login/login';
+import { HorarioPage } from '../horario/horario';
 
 @Component({
   selector: 'page-home',
@@ -40,6 +42,14 @@ export class HomePage implements OnInit {
       this.avisos = data;
       console.log(this.avisos);     
     });   
+  }
+
+  login(){
+    this.navCtrl.push(LoginPage);
+  }
+
+  horario(){
+    this.navCtrl.push(HorarioPage);
   }
 
 }

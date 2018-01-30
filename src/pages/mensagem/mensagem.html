@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+        <button ion-button clear (click)="login()">Login</button>
+    </ion-buttons>
+    <ion-title text-center>Calango Móvel</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="horario()">Horário</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-title text-center>Enviar Mensagem Para Coordenação</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="mensagem.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Matricula</ion-label>
+      <ion-input type="text" [(ngModel)]="mensagem.matricula"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Título</ion-label>
+      <ion-input type="text" [(ngModel)]="mensagem.titulo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Conteúdo</ion-label>
+      <ion-textarea type="text" [(ngModel)]="mensagem.conteudo"></ion-textarea>
+    </ion-item>
+
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button full (click)="enviar(mensagem)">Enviar</button>
+  </div>
+</ion-content>

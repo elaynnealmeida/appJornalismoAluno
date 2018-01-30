@@ -1,0 +1,50 @@
+<ion-header >
+  <ion-navbar >
+    <ion-buttons left >
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title >Avisos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-title text-center>Novo Aviso</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Título</ion-label>
+      <ion-input type="text" [(ngModel)]="aviso.titulo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Conteúdo</ion-label>
+      <ion-textarea type="text" [(ngModel)]="aviso.aviso"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button ion-button full (click)="salvar(aviso)">Cadastrar</button>
+  </div>
+
+  <div padding>
+    <ion-list *ngFor="let a of avisos">
+      <ion-item-sliding>
+        <button ion-item>
+          <h2> {{ a.titulo }} </h2>
+          <p> {{ a.aviso }} </p>
+        </button> >
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="deletarAviso(a.id)">
+            Deletar
+          </button>
+        </ion-item-options>
+        <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="editarAviso(a)">
+            Editar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+</ion-content>

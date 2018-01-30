@@ -1,1 +1,26 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+      
+        <ion-content>
+          <ion-list>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+              {{p.title}}
+            </button>
+          </ion-list>
+        </ion-content>
+      
+      </ion-menu>
+      
+      <ion-tabs>
+          <ion-tab [root]="tab1Root" tabTitle="Avisos" tabIcon="home"></ion-tab>
+          <ion-tab [root]="tab2Root" tabTitle="Curso" tabIcon="information-circle"></ion-tab>
+          <ion-tab [root]="tab4Root" tabTitle="UFT" tabIcon="information-circle"></ion-tab>
+          <ion-tab [root]="tab3Root" tabTitle="Contatos" tabIcon="contacts"></ion-tab>
+          <ion-tab [root]="tab5Root" tabTitle="Mapa" tabIcon="globe"></ion-tab>
+          <ion-tab [root]="tab6Root" tabTitle="Mensagem" tabIcon="mail"></ion-tab>
+        </ion-tabs>
+        <ion-nav [root]="rootPage" #content ></ion-nav>

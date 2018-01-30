@@ -1,24 +1,34 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Avisos</ion-title>
+    <ion-buttons left>
+        <button ion-button clear (click)="login()">Login</button>
+    </ion-buttons>
+    <ion-title text-center>Calango Móvel</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="horario()">Horário</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-list *ngFor="let a of avisos">
-        <ion-card>
-  <ion-card-header>
-    <h1> {{ a.titulo }} </h1>    
-  </ion-card-header>
-            
-  <ion-card-content>
-   {{ a.aviso }}
-  </ion-card-content>
-            
-   <ion-card-content>
-  postado em: {{ a.data }} hs
-  </ion-card-content>
-</ion-card>
-     
-    </ion-list>
+    <ion-title text-center>Avisos</ion-title>
+  <ion-list *ngFor="let a of avisos">
+    <ion-card>
+      <ion-card-header>
+        <h1> {{ a.titulo }} </h1>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{ a.aviso }}
+      </ion-card-content>
+      <ion-card-content>
+        postado por: {{ a.usuario }}
+      </ion-card-content>
+
+      <ion-card-content>
+        em: {{ a.data }} hs
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
 </ion-content>

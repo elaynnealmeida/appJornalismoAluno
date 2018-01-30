@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { LoginPage } from '../login/login';
+import { HorarioPage } from '../horario/horario';
 
 @Component({
   selector: 'page-contact',
@@ -32,5 +34,11 @@ export class ContactPage implements OnInit {
     });   
   }
 
+  login(){
+    this.navCtrl.push(LoginPage);
+  }
 
+  horario(){
+    this.navCtrl.push(HorarioPage);
+  }
 }

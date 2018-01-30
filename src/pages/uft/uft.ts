@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { LoginPage } from '../login/login';
+import { HorarioPage } from '../horario/horario';
 
 @IonicPage()
 @Component({
@@ -37,5 +39,12 @@ export class UftPage implements OnInit {
       console.log(this.setores);
     });
   }
+  
+  login(){
+    this.navCtrl.push(LoginPage);
+  }
 
+  horario(){
+    this.navCtrl.push(HorarioPage);
+  }
 }

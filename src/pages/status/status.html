@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Alterar Status</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+   <ion-content padding>   
+      <ion-title text-center>Setores do Curso</ion-title>
+    <ion-list *ngFor="let a of setores" (click)="alterarStatus(a)">
+      <ion-item-sliding>
+        <button ion-item >
+          <h2> {{ a.nome }} </h2>                         
+          <p> {{ a.local }} </p>
+          <p> {{ a.status }} </p>          
+        </button> >
+        
+      </ion-item-sliding>
+    </ion-list>
+  
+  </ion-content>
+  

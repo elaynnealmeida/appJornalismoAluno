@@ -1,23 +1,28 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Setores do Curso
-    </ion-title>
+    <ion-buttons left>
+        <button ion-button clear (click)="login()">Login</button>
+    </ion-buttons>
+    <ion-title text-center>Calango Móvel</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="horario()">Horário</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-<ion-list *ngFor="let a of setores">
-        <ion-item-sliding >
-          <button ion-item color="light">
-            <h2> {{ a.nome }} </h2>                         
-            <p> {{ a.local }} </p>
-            <p> Responsável: {{ a.responsavel }} </p>
-            <p>Funcionamento: {{ a.dia }} </p>
-            <p> {{ a.horario }} </p>
-            <p> {{ a.status }} </p>
-          </button> >
-          
-        </ion-item-sliding>
-      </ion-list>
+  <ion-title text-center>Setores do Curso</ion-title>
+  <ion-list *ngFor="let a of setores">
+    <ion-item-sliding>
+      <button ion-item color="light">
+        <h2> {{ a.nome }} </h2>
+        <p> {{ a.local }} </p>
+        <p> Responsável: {{ a.responsavel }} </p>
+        <p>Funcionamento: {{ a.dia }} </p>
+        <p> {{ a.horario }} </p>
+        <p> {{ a.status }} </p>
+      </button> >
+
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

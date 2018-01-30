@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Cadastro de Usuário</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-title text-center>Cadastrar Usuário</ion-title>
+    <ion-list>
+  
+      <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="professor.nome"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="professor.email"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="professor.senha"></ion-input>
+      </ion-item>
+    
+    </ion-list>
+    
+    <div padding>
+      <button ion-button full (click)="salvar(professor)">Cadastrar</button>
+    </div>
+  
+    <div padding>
+        
+      <ion-list *ngFor="let p of professores" >
+        <ion-item-sliding>
+          <button ion-item >
+             <h2> {{ p.nome }} </h2>
+             <p> {{ p.email }} </p>
+            </button>  >
+          <ion-item-options side="right">
+              <button ion-button color="danger" (click)="deletarProfessor(p.id)">
+                Deletar
+              </button>
+          </ion-item-options>
+          <ion-item-options side="left">
+              <button ion-button color="secondary" (click)="editarProfessor(p)">
+                Editar
+              </button>
+          </ion-item-options>
+        </ion-item-sliding>   
+      </ion-list>
+    </div>
+  </ion-content>
+  
+  
