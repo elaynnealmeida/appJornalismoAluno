@@ -1,5 +1,5 @@
 import { Component, OnInit  } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -10,16 +10,15 @@ import { AuthProvider } from '../../providers/auth/auth';
 import { SetorcursoProvider } from '../../providers/setorcurso/setorcurso';
 
 
-@IonicPage()
 @Component({
   selector: 'page-cadastrarsetorcurso',
   templateUrl: 'cadastrarsetorcurso.html',
 })
 export class CadastrarsetorcursoPage implements OnInit {
-  private url: string = 'http://localhost/apiCadastraSetorCurso.php';
+  private url: string = 'http://172.16.3.59:80/apiCadastraSetorCurso.php';
   selectedItem: any;
   icons: string[];
-  private url2:string = 'http://localhost/apiRecuperaSetorCurso.php';
+  private url2:string = 'http://172.16.3.59:80/apiRecuperaSetorCurso.php';
   public setores: Array<{}>;
   public myDate: String = new Date().toISOString();
   public setor: any= {

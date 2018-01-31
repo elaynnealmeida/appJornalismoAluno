@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Storage } from '@ionic/storage';
@@ -9,17 +9,16 @@ import { AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { AvisosProvider } from '../../providers/avisos/avisos';
 
-@IonicPage()
 @Component({
   selector: 'page-avisos',
   templateUrl: 'avisos.html',
 })
 export class AvisosPage implements OnInit {
-  private url: string = 'http://localhost/apiPostaAviso.php';
+  private url: string = 'http://172.16.3.59:80/apiPostaAviso.php';
   selectedItem: any;
   public perfil1: any;
   icons: string[];
-  private url2: string = 'http://localhost/apiRecuperaAviso.php';
+  private url2: string = 'http://172.16.3.59:80/apiRecuperaAviso.php';
   public avisos: Array<{}>;
   public myDate: String = new Date().toISOString();
   public myDate2: String = new Date().toString().substring(4, 24);

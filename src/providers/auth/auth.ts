@@ -9,7 +9,7 @@ import { AvisosPage } from '../../pages/avisos/avisos';
 
 @Injectable()
 export class AuthProvider {
-  private url: string = 'http://localhost/';
+  private url: string = 'http://172.16.3.59:80/';
 
   constructor(public http: Http,
    // public navCtrl: NavController,

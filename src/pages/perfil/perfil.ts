@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AuthProvider } from '../../providers/auth/auth';
 import { TabsPage } from '../tabs/tabs';
 import { ToastController } from 'ionic-angular';
 import { ServiceProvider } from '../../providers/service/service';
 
-@IonicPage()
 @Component({
   selector: 'page-perfil',
   templateUrl: 'perfil.html',

@@ -13,7 +13,7 @@ import { HorarioPage } from '../horario/horario';
 export class HomePage implements OnInit {
   selectedItem: any;
   icons: string[];
-  private url2:string = 'http://localhost/apiRecuperaAviso.php';
+  private url2:string = 'http://172.16.3.59:80/apiRecuperaAviso.php';
   public avisos: Array<{}>;
   public myDate: String = new Date().toISOString();
   public myDate2: String = new Date().toString().substring(4,24);

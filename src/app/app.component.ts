@@ -39,11 +39,15 @@ export class MyApp {
     public auth: AuthProvider,
     public storage: Storage) {
       
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+      platform.ready().then(() => {
+        let funcaoRetorno = (data) => {
+          // alert(JSON.stringify(data));
+        };
+  
+        window["plugins"].OneSignal.startInit("9fb50308-97a8-4792-b005-262275f15d1c",
+            "577801687898")
+            .handleNotificationOpened(funcaoRetorno)
+            .endInit();
     });
 
     // used for an example of ngFor and navigation

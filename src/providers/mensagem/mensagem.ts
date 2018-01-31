@@ -3,15 +3,9 @@ import { Http, Response, ResponseOptions, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
-/*
-  Generated class for the MensagemProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class MensagemProvider {
-  private url:string = 'http://localhost/';
+  private url:string = 'http://172.16.3.59:80/';
   constructor(public http: Http) {
     console.log('Hello MensagemProvider Provider');
   }

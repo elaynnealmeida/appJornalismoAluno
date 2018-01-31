@@ -1,16 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { HorarioPage } from '../horario/horario';
 import { LoginPage } from '../login/login';
 
-/**
- * Generated class for the MapaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-mapa',
   templateUrl: 'mapa.html',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams, IonicPage } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -8,16 +8,15 @@ import { ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 
-@IonicPage()
 @Component({
   selector: 'page-usuarios',
   templateUrl: 'usuarios.html',
 })
 export class UsuariosPage implements OnInit {
-  private url: string = 'http://localhost/apiCadastraProfessor.php';
+  private url: string = 'http://172.16.3.59:80/apiCadastraProfessor.php';
   selectedItem: any;
   icons: string[];
-  private url2:string = 'http://localhost/apiRecupera.php';
+  private url2:string = 'http://172.16.3.59:80/apiRecupera.php';
   public professores: Array<{}>;
   public professor = {
     nome: "",

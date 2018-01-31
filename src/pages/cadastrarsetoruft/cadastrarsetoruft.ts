@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -10,16 +10,15 @@ import { AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { SetoruftProvider } from '../../providers/setoruft/setoruft';
 
-@IonicPage()
 @Component({
   selector: 'page-cadastrarsetoruft',
   templateUrl: 'cadastrarsetoruft.html',
 })
 export class CadastrarsetoruftPage implements OnInit {
-  private url: string = 'http://localhost/apiCadastraSetorUFT.php';
+  private url: string = 'http://172.16.3.59:80/apiCadastraSetorUFT.php';
   selectedItem: any;
   icons: string[];
-  private url2: string = 'http://localhost/apiRecuperaSetorUFT.php';
+  private url2: string = 'http://172.16.3.59:80/apiRecuperaSetorUFT.php';
   public setores: Array<{}>;
   public myDate: String = new Date().toISOString();
   public setor: any = {

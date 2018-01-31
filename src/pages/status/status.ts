@@ -1,5 +1,5 @@
 import { Component, OnInit  } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -9,13 +9,12 @@ import { AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { SetorcursoProvider } from '../../providers/setorcurso/setorcurso';
 
-@IonicPage()
 @Component({
   selector: 'page-status',
   templateUrl: 'status.html',
 })
 export class StatusPage implements OnInit {
-  private url2:string = 'http://localhost/apiRecuperaSetorCurso.php';
+  private url2:string = 'http://172.16.3.59:80/apiRecuperaSetorCurso.php';
   public setores: Array<{}>;
   
   constructor(public navCtrl: NavController,

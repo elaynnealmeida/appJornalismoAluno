@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
+import { NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { MensagemProvider } from '../../providers/mensagem/mensagem';
 import { LoginPage } from '../login/login';
 import { HorarioPage } from '../horario/horario';
 
-@IonicPage()
 @Component({
   selector: 'page-mensagem',
   templateUrl: 'mensagem.html',

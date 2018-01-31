@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { ToastController } from 'ionic-angular';
 import { AvisosPage } from '../avisos/avisos';
 import { Http, Response, ResponseOptions, Headers } from '@angular/http';
 import { Storage } from '@ionic/storage';
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -24,7 +23,7 @@ export class LoginPage {
     senha: ""
   };
 
-  private url: string = 'http://localhost/';
+  private url: string = 'http://172.16.3.59:80/';
   public perfil: any = [];
   public exibe: boolean = false;
 

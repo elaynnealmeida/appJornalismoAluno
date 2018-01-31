@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "577801687898",
+    "firebase_url": "https://calango-movel.firebaseio.com",
+    "project_id": "calango-movel",
+    "storage_bucket": "calango-movel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577801687898:android:3402d82ab122fc26",
+        "android_client_info": {
+          "package_name": "uft.edu.br.computacao.appjornalismo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577801687898-ja68e0m341695et07dohctqn8bp05fbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdd-tFj2x-mzaiuJr3vMALcQzUJ6ODayY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
