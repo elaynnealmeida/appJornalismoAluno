@@ -3,9 +3,11 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UsuariosPage } from '../pages/usuarios/usuarios';
-import { StatusPage } from '../pages/status/status'; import { AvisosPage } from '../pages/avisos/avisos';
+import { StatusPage } from '../pages/status/status'; 
+import { AvisosPage } from '../pages/avisos/avisos';
 import { CadastrarsetorcursoPage } from '../pages/cadastrarsetorcurso/cadastrarsetorcurso';
 import { CadastrarsetoruftPage } from '../pages/cadastrarsetoruft/cadastrarsetoruft';
+import { CadastraduvidasPage } from '../pages/cadastraduvidas/cadastraduvidas';
 import { AuthProvider } from '../providers/auth/auth';
 import { Storage } from '@ionic/storage';
 import { PerfilPage } from '../pages/perfil/perfil';
@@ -57,6 +59,7 @@ export class MyApp {
       { title: 'Setores da UFT', component: CadastrarsetoruftPage },
       { title: 'Setores do Curso', component: CadastrarsetorcursoPage },
       { title: 'Alterar Status', component: StatusPage },
+      { title: 'Dúvidas', component: CadastraduvidasPage },
       { title: 'Perfil', component: PerfilPage }
     ];
 

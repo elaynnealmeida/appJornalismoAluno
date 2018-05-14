@@ -7,21 +7,24 @@ import { ServiceProvider } from '../../providers/service/service';
 import { ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
+import { DuvidasProvider } from '../../providers/duvidas/duvidas';
+
 
 @Component({
-  selector: 'page-usuarios',
-  templateUrl: 'usuarios.html',
+  selector: 'page-cadastraduvidas',
+  templateUrl: 'cadastraduvidas.html',
 })
-export class UsuariosPage implements OnInit {
-  private url: string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiCadastraProfessor.php';
+export class CadastraduvidasPage implements OnInit {
+ // private url: string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiCadastraSetorCurso.php';
   selectedItem: any;
   icons: string[];
-  private url2:string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiRecupera.php';
-  public professores: Array<{}>;
-  public professor = {
-    nome: "",
-    email: "",
-    senha: ""
+  private url2:string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiRecuperaDuvidas.php';
+  public duvidas: Array<{}>;
+  public myDate: String = new Date().toISOString();
+  public duvida: any= {
+    id:0,
+    pergunta: "",
+    resposta: ""
   };
 
   constructor(public navCtrl: NavController,
@@ -30,44 +33,44 @@ export class UsuariosPage implements OnInit {
     public service: ServiceProvider,
     public toastCtrl: ToastController,
     public auth: AuthProvider,
+    public duvidasProvider: DuvidasProvider,
     public alertCtrl: AlertController
   ) {
 
   }
 
   ngOnInit(){
-    this.getProfessores();
+    this.getDuvidas();
   }
 
-  getProfessores(){
+  getDuvidas(){
     this.http.get(this.url2).subscribe((data:any )=>{
       data = JSON.parse(data['_body']);
-      this.professores = data;
-      console.log(this.professores);     
+      this.duvidas = data;
+      console.log(this.duvidas);     
     });   
   }
 
-  ionViewCanEnter(){
-    return this.auth.userLogado();
-  }
-
   salvar(p) {
-    this.service.postData(p)
+    console.log("entrou no salvar duvida");
+    this.duvida.pergunta = p.pergunta;
+    this.duvida.resposta = p.resposta;
+   
+    this.duvidasProvider.postData(this.duvida)
       .subscribe((data:any )=>{
         let toast = this.toastCtrl.create({
         message: data.mensage,
         duration: 4000,
         position: 'bottom'
       });
-      toast.present();    
-      this.getProfessores(); 
-      });    
-      this.professor.nome = "";
-      this.professor.email = "";
-      this.professor.senha = "";  
+      toast.present(); 
+      this.getDuvidas();    
+      });
+      this.duvida.pergunta = "";
+      this.duvida.resposta = "";
   }
 
-  deletarProfessor(p) {
+  deletar(p) {
     let prompt = this.alertCtrl.create({
       title: 'Exclusão',
       message: "Tem certeza que quer excluir?",   
@@ -81,13 +84,13 @@ export class UsuariosPage implements OnInit {
         {
           text: 'Confirmar',
           handler: data => {
-            this.service.deletaProfessor(p)
+            this.duvidasProvider.deleta(p)
             .subscribe((data:any )=>{ let toast = this.toastCtrl.create({
               message: data.mensage,
               duration: 4000,
               position: 'bottom'
             });
-            this.getProfessores();
+            this.getDuvidas();
             toast.present();  
             });
           }
@@ -95,24 +98,23 @@ export class UsuariosPage implements OnInit {
       ]
     });
     prompt.present();
-  }
-   
+  }  
   
 
-  editarProfessor(req) {
+  editar(req) {
     let prompt = this.alertCtrl.create({
-      title: 'Editar Professor',
+      title: 'Editar Setor',
       inputs: [
         {
-          name: 'nome',
-          placeholder: 'Nome',
-          value:req.nome
+          name: 'pergunta',
+          placeholder: 'Pergunta',
+          value:req.pergunta
         },
         {
-          name: 'email',
-          placeholder: 'Email',
-          value:req.email
-        },
+          name: 'resposta',
+          placeholder: 'Resposta',
+          value:req.resposta
+        }
       ],
       buttons: [
         {
@@ -125,18 +127,18 @@ export class UsuariosPage implements OnInit {
           handler: data => {
             let params:any={
               id:req.id,
-              nome:data.nome,
-              email:data.email
+              pergunta:data.pergunta,
+              resposta:data.resposta
             }
             console.log(params);
-            this.service.editaProfessor(params)
+            this.duvidasProvider.edita(params)
             .subscribe((data:any )=>{
               let toast = this.toastCtrl.create({
                 message: data.mensage,
                 duration: 4000,
                 position: 'bottom'
               });
-              this.getProfessores();
+              this.getDuvidas();
               toast.present();       
             });
           }
@@ -144,5 +146,10 @@ export class UsuariosPage implements OnInit {
       ]
     });
     prompt.present();
+  }
+
+ 
+  ionViewCanEnter(){
+    return this.auth.userLogado();
   }
 }

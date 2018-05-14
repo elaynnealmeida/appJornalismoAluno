@@ -15,10 +15,10 @@ import { SetoruftProvider } from '../../providers/setoruft/setoruft';
   templateUrl: 'cadastrarsetoruft.html',
 })
 export class CadastrarsetoruftPage implements OnInit {
-  private url: string = 'http://172.16.3.59:80/apiCadastraSetorUFT.php';
+  private url: string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiCadastraSetorUFT.php';
   selectedItem: any;
   icons: string[];
-  private url2: string = 'http://172.16.3.59:80/apiRecuperaSetorUFT.php';
+  private url2: string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiRecuperaSetorUFT.php';
   public setores: Array<{}>;
   public myDate: String = new Date().toISOString();
   public setor: any = {

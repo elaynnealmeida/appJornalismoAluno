@@ -8,9 +8,14 @@
       <button ion-button clear (click)="horario()">Horário</button>
     </ion-buttons>
   </ion-navbar>
-  </ion-header>
-
+</ion-header>
 
 <ion-content padding>
-  <img src="assets/imgs/MapadoCampus.png" #myImage (click)="presentImage(myImage)" />
+    <ion-title text-center>Dúvidas Frequentes</ion-title>
+
+  <ion-list >
+    <button ion-item *ngFor="let a of duvidas" (click)="ver(a)">
+      {{a.pergunta}}
+    </button> 
+  </ion-list>
 </ion-content>

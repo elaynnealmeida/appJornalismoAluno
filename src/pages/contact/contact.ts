@@ -11,7 +11,7 @@ import { HorarioPage } from '../horario/horario';
   templateUrl: 'contact.html'
 })
 export class ContactPage implements OnInit {
-  private url2:string = 'http://172.16.3.59:80/apiRecupera.php';
+  private url2:string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiRecupera.php';
   public professores: Array<{}>;
 
 
@@ -21,6 +21,10 @@ export class ContactPage implements OnInit {
   ) {
 
   }
+
+  ionViewWillEnter(){
+    this.getProfessores();
+   }
 
   ngOnInit(){
     this.getProfessores();

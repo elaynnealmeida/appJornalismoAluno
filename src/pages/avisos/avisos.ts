@@ -14,11 +14,11 @@ import { AvisosProvider } from '../../providers/avisos/avisos';
   templateUrl: 'avisos.html',
 })
 export class AvisosPage implements OnInit {
-  private url: string = 'http://172.16.3.59:80/apiPostaAviso.php';
+  private url: string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiPostaAviso.php';
   selectedItem: any;
   public perfil1: any;
   icons: string[];
-  private url2: string = 'http://172.16.3.59:80/apiRecuperaAviso.php';
+  private url2: string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiRecuperaAviso.php';
   public avisos: Array<{}>;
   public myDate: String = new Date().toISOString();
   public myDate2: String = new Date().toString().substring(4, 24);
@@ -71,6 +71,11 @@ export class AvisosPage implements OnInit {
     this.aviso.hora = this.myDate;
     this.aviso.data = this.myDate2;
     this.aviso.usuario = this.perfil1;
+    console.log("titulo: "+this.aviso.titulo);
+    console.log("conteudo: "+this.aviso.aviso);
+    console.log("hora"+this.aviso.hora);
+    console.log("data: "+this.aviso.data);
+    console.log("uduario: "+this.aviso.usuario);
     this.avisoProvider.postData(this.aviso)
       .subscribe((data: any) => {
         let toast = this.toastCtrl.create({

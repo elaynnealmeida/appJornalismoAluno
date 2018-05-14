@@ -11,7 +11,7 @@ import { HorarioPage } from '../horario/horario';
   templateUrl: 'about.html'
 })
 export class AboutPage implements OnInit { 
-  private url2:string = 'http://172.16.3.59:80/apiRecuperaSetorCurso.php';
+  private url2:string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiRecuperaSetorCurso.php';
   public setores: Array<{}>;
   public cor: String = "";
   public setor: any= {
@@ -27,6 +27,10 @@ export class AboutPage implements OnInit {
   ) {
 
   }
+
+  ionViewWillEnter(){
+    this.getSetores();
+   }
 
   ngOnInit(){
     this.getSetores();

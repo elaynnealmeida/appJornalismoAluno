@@ -11,7 +11,7 @@ import { HorarioPage } from '../horario/horario';
   templateUrl: 'uft.html',
 })
 export class UftPage implements OnInit {
-  private url2: string = 'http://172.16.3.59:80/apiRecuperaSetorUFT.php';
+  private url2: string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiRecuperaSetorUFT.php';
   public setores: Array<{}>;
   public myDate: String = new Date().toISOString();
   public setor: any = {
@@ -26,6 +26,10 @@ export class UftPage implements OnInit {
   ) {
 
   }
+
+  ionViewWillEnter(){
+    this.getSetores();
+   }
 
   ngOnInit() {
     this.getSetores();

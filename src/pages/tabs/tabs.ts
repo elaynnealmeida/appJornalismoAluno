@@ -6,6 +6,7 @@ import { HomePage } from '../home/home';
 import { UftPage } from '../uft/uft';
 import { MapaPage } from '../mapa/mapa';
 import { MensagemPage } from '../mensagem/mensagem';
+import { DuvidasPage } from '../duvidas/duvidas';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -18,6 +19,7 @@ export class TabsPage {
   tab4Root = UftPage;
   tab5Root = MapaPage;
   tab6Root = MensagemPage;  
+  tab7Root = DuvidasPage;  
 
   constructor() {
 

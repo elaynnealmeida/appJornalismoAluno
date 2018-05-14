@@ -9,7 +9,7 @@ import { AvisosPage } from '../../pages/avisos/avisos';
 
 @Injectable()
 export class AuthProvider {
-  private url: string = 'http://172.16.3.59:80/';
+  private url: string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/';
 
   constructor(public http: Http,
    // public navCtrl: NavController,

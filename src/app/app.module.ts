@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
@@ -20,6 +21,10 @@ import { CadastrarsetorcursoPage } from '../pages/cadastrarsetorcurso/cadastrars
 import { CadastrarsetoruftPage } from '../pages/cadastrarsetoruft/cadastrarsetoruft';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { HorarioPage } from '../pages/horario/horario';
+import { HorariosPage } from '../pages/horarios/horarios';
+import { CadastraduvidasPage } from '../pages/cadastraduvidas/cadastraduvidas';
+import { DuvidasPage } from '../pages/duvidas/duvidas';
+import { RespostaPage } from '../pages/resposta/resposta';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,6 +34,7 @@ import { AvisosProvider } from '../providers/avisos/avisos';
 import { ServiceProvider } from '../providers/service/service';
 import { SetorcursoProvider } from '../providers/setorcurso/setorcurso';
 import { SetoruftProvider } from '../providers/setoruft/setoruft';
+import { DuvidasProvider } from '../providers/duvidas/duvidas';
 
 @NgModule({
   declarations: [
@@ -47,9 +53,14 @@ import { SetoruftProvider } from '../providers/setoruft/setoruft';
     CadastrarsetorcursoPage,
     CadastrarsetoruftPage,
     PerfilPage,
-    HorarioPage
+    HorarioPage,
+    HorariosPage,
+    CadastraduvidasPage,
+    DuvidasPage,
+    RespostaPage
   ],
   imports: [
+    IonicImageViewerModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot( {
@@ -75,7 +86,11 @@ import { SetoruftProvider } from '../providers/setoruft/setoruft';
     CadastrarsetorcursoPage,
     CadastrarsetoruftPage,
     PerfilPage,
-    HorarioPage
+    HorarioPage,
+    HorariosPage,
+    CadastraduvidasPage,
+    DuvidasPage,
+    RespostaPage
   ],
   providers: [
     StatusBar,
@@ -86,7 +101,8 @@ import { SetoruftProvider } from '../providers/setoruft/setoruft';
     AvisosProvider,
     ServiceProvider,
     SetorcursoProvider,
-    SetoruftProvider
+    SetoruftProvider,
+    DuvidasProvider
   ]
 })
 export class AppModule {}

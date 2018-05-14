@@ -23,7 +23,7 @@ export class LoginPage {
     senha: ""
   };
 
-  private url: string = 'http://172.16.3.59:80/';
+  private url: string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/';
   public perfil: any = [];
   public exibe: boolean = false;
 

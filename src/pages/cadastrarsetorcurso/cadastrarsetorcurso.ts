@@ -15,10 +15,10 @@ import { SetorcursoProvider } from '../../providers/setorcurso/setorcurso';
   templateUrl: 'cadastrarsetorcurso.html',
 })
 export class CadastrarsetorcursoPage implements OnInit {
-  private url: string = 'http://172.16.3.59:80/apiCadastraSetorCurso.php';
+  private url: string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiCadastraSetorCurso.php';
   selectedItem: any;
   icons: string[];
-  private url2:string = 'http://172.16.3.59:80/apiRecuperaSetorCurso.php';
+  private url2:string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiRecuperaSetorCurso.php';
   public setores: Array<{}>;
   public myDate: String = new Date().toISOString();
   public setor: any= {

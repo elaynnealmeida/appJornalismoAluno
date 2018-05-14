@@ -1,0 +1,50 @@
+<ion-header >
+  <ion-navbar >
+    <ion-buttons left >
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title >Dúvidas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-title text-center>Nova Pergunta</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Pergunta</ion-label>
+      <ion-input type="text" [(ngModel)]="duvida.pergunta"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Resposta</ion-label>
+      <ion-textarea type="text" [(ngModel)]="duvida.resposta"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button ion-button full (click)="salvar(duvida)">Cadastrar</button>
+  </div>
+
+  <div padding>
+    <ion-list *ngFor="let a of duvidas">
+      <ion-item-sliding>
+        <button ion-item>
+          <h2> {{ a.pergunta }} </h2>
+          <p> {{ a.resposta }} </p>
+        </button> >
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="deletar(a.id)">
+            Deletar
+          </button>
+        </ion-item-options>
+        <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="editar(a)">
+            Editar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+</ion-content>

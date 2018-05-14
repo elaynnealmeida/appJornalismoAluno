@@ -14,7 +14,7 @@ import { SetorcursoProvider } from '../../providers/setorcurso/setorcurso';
   templateUrl: 'status.html',
 })
 export class StatusPage implements OnInit {
-  private url2:string = 'http://172.16.3.59:80/apiRecuperaSetorCurso.php';
+  private url2:string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/apiRecuperaSetorCurso.php';
   public setores: Array<{}>;
   
   constructor(public navCtrl: NavController,

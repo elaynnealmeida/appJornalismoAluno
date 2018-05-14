@@ -3,8 +3,9 @@ import { Http, Response, ResponseOptions, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
+
 @Injectable()
-export class SetoruftProvider {
+export class DuvidasProvider {
   private url:string = 'https://palmas.uft.edu.br/grad/jornalismo/calangomobile/';
 
   constructor(public http: Http) {
@@ -17,7 +18,7 @@ export class SetoruftProvider {
 
   listaUm(parans){
     let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
-    return this.http.post(this.url+"apiRecupera1SetorUFT.php",parans,
+    return this.http.post(this.url+"apiRecupera1Duvida.php",parans,
   {headers:headers,
   method:"POST"
   }).map((res: Response) => {return res.json();});
@@ -25,7 +26,7 @@ export class SetoruftProvider {
 
   lista(){
     let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
-    return this.http.post(this.url+"apiRecuperaSetorUFT.php",
+    return this.http.post(this.url+"apiRecuperaDuvidas.php",
   {headers:headers,
   method:"POST"
   }).map((res: Response) => {return res.json();});
@@ -33,15 +34,7 @@ export class SetoruftProvider {
 
   postData(parans){
     let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
-    return this.http.post(this.url+"apiCadastraSetorUFT.php",parans,
-  {headers:headers,
-  method:"POST"
-  }).map((res: Response) => {return res.json();});
-  }
-
-  postHorario(parans){
-    let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
-    return this.http.post(this.url+"apiCadastraHorarioUFT.php",parans,
+    return this.http.post(this.url+"apiCadastraDuvidas.php",parans,
   {headers:headers,
   method:"POST"
   }).map((res: Response) => {return res.json();});
@@ -49,7 +42,7 @@ export class SetoruftProvider {
 
   deleta(parans){
     let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
-    return this.http.post(this.url+"apiDeletaSetorUFT.php",parans,
+    return this.http.post(this.url+"apiDeletaDuvida.php",parans,
   {headers:headers,
   method:"POST"
   }).map((res: Response) => {return res.json();});
@@ -57,7 +50,7 @@ export class SetoruftProvider {
 
   edita(parans){
     let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
-    return this.http.post(this.url+"apiEditaSetorUFT.php",parans,
+    return this.http.post(this.url+"apiEditaDuvidas.php",parans,
   {headers:headers,
   method:"POST"
   }).map((res: Response) => {return res.json();});

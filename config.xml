@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="uft.edu.br.computacao.appjornalismo" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>appAlunos</name>
+    <name>Calango Móvel</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
@@ -39,7 +39,6 @@
         <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
-        <resource-file src="locales/android/drawable-mdpi/ic_stat_onesignal_default.png" target="res/drawable-mdpi/ic_stat_onesignal_default.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -90,5 +89,6 @@
     <platform name="android">
         <resource-file src="google-services.json" target="app/google-services.json" />
     </platform>
-    <engine name="android" spec="7.0.0" />
+    <allow-navigation href="http://172.16.3.59:8100" />
+    <engine name="android" spec="6.4.0" />
 </widget>
